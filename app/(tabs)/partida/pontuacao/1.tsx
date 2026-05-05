@@ -123,13 +123,11 @@ export default function PontuacaoEtapaScreen() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <ThemedView style={styles.container}>
           <ThemedView style={styles.header}>
-            <ThemedText type="title">Etapa {etapa}</ThemedText>
-
-            <ThemedText type="subtitle">Agentes recrutados</ThemedText>
+            <ThemedText type="title">Pontuação de agentes</ThemedText>
 
             <ThemedText style={styles.description}>
-              Some os pontos impressos em todos os agentes recrutados por cada
-              jogador.
+              Some os pontos em todos os agentes recrutados (Pontuação da
+              Estrela).
             </ThemedText>
           </ThemedView>
 

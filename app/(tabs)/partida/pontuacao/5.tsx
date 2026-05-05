@@ -237,7 +237,8 @@ export default function Etapa3Rodada1Screen() {
     <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <ThemedView style={styles.container}>
-          <ThemedText type="title">Rodada 3</ThemedText>
+          <ThemedText type="title">Bônus por rodada</ThemedText>
+          <ThemedText type="subtitle">Rodada 3</ThemedText>
 
           {isBest ? (
             <>

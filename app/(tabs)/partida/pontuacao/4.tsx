@@ -192,6 +192,10 @@ export default function Etapa3Rodada1Screen() {
     return totals;
   }, [slots, currentMatch]);
 
+  function goBack() {
+    router.push("/partida/pontuacao/3");
+  }
+
   async function saveAndContinue() {
     if (!currentMatch) return;
 
@@ -237,7 +241,8 @@ export default function Etapa3Rodada1Screen() {
     <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <ThemedView style={styles.container}>
-          <ThemedText type="title">Rodada 2</ThemedText>
+          <ThemedText type="title">Bônus por rodada</ThemedText>
+          <ThemedText type="subtitle">Rodada 2</ThemedText>
 
           {isBest ? (
             <>
@@ -334,6 +339,9 @@ export default function Etapa3Rodada1Screen() {
           <Pressable style={styles.next} onPress={saveAndContinue}>
             <ThemedText style={{ color: "#fff" }}>Avançar</ThemedText>
           </Pressable>
+          <Pressable style={styles.back} onPress={goBack}>
+            <ThemedText style={{ color: "#fff" }}>Voltar</ThemedText>
+          </Pressable>
         </ThemedView>
 
         <Modal visible={!!pickerState} transparent animationType="fade">
@@ -418,6 +426,12 @@ const styles = StyleSheet.create({
   },
   next: {
     backgroundColor: "#C62828",
+    padding: 14,
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  back: {
+    backgroundColor: "#37474F",
     padding: 14,
     alignItems: "center",
     borderRadius: 10,

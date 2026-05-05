@@ -82,6 +82,10 @@ export default function PontuacaoEtapa2Screen() {
     updateScore(playerId, numericText ? Number(numericText) : 0);
   }
 
+  function goBack() {
+    router.push("/partida/pontuacao/1");
+  }
+
   async function saveAndContinue() {
     if (!currentMatch) return;
 
@@ -118,13 +122,11 @@ export default function PontuacaoEtapa2Screen() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <ThemedView style={styles.container}>
           <ThemedView style={styles.header}>
-            <ThemedText type="title">Etapa 2</ThemedText>
-
-            <ThemedText type="subtitle">Operações bem sucedidas</ThemedText>
+            <ThemedText type="title">Operações bem sucedidas</ThemedText>
 
             <ThemedText style={styles.description}>
-              Some a pontuação de todas as operações bem sucedidas realizadas
-              por cada jogador.
+              Some a pontuação de todas as operações bem sucedidas (Pontuação da
+              Estrela).
             </ThemedText>
           </ThemedView>
 
@@ -172,6 +174,9 @@ export default function PontuacaoEtapa2Screen() {
             <ThemedText style={styles.nextButtonText}>
               Salvar e avançar
             </ThemedText>
+          </Pressable>
+          <Pressable style={styles.back} onPress={goBack}>
+            <ThemedText style={{ color: "#fff" }}>Voltar</ThemedText>
           </Pressable>
         </ThemedView>
       </ScrollView>
@@ -255,5 +260,11 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 17,
     fontWeight: "700",
+  },
+  back: {
+    backgroundColor: "#37474F",
+    padding: 14,
+    alignItems: "center",
+    borderRadius: 10,
   },
 });

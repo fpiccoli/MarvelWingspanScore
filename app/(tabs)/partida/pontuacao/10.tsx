@@ -301,9 +301,7 @@ export default function PontuacaoEtapa10Screen() {
           </ThemedView>
 
           <Pressable style={styles.nextButton} onPress={saveAndContinue}>
-            <ThemedText style={styles.nextButtonText}>
-              Ver resultado final
-            </ThemedText>
+            <ThemedText style={styles.nextButtonText}>Resultado</ThemedText>
           </Pressable>
         </ThemedView>
       </ScrollView>
